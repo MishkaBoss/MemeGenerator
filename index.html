@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://use.fontawesome.com/67001a790f.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,29 +26,95 @@
     <main class="main-content">
         <div class="grid-container">
             <div class="grid-gallery grid-style">
-                <a class="grid-item img1" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img2" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img3" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img4" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img5" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img6" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img7" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img8" href="#"><img src="images/memes/10.jpg" alt=""></a>
-                <a class="grid-item img9" href="#"><img src="images/memes/10.jpg" alt=""></a>
+                <a class="grid-item img1" href="#"><img id="1" src="images/memes/1.jpg" onclick="getMeme(this.src)"
+                        alt=""></a>
+                <a class=" grid-item img2" href="#"><img id="18" src="images/memes/18.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img3" href="#"><img id="17" src="images/memes/17.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img4" href="#"><img id="15" src="images/memes/15.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img5" href="#"><img id="5" src="images/memes/5.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img6" href="#"><img id="6" src="images/memes/6.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img7" href="#"><img id="13" src="images/memes/13.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img8" href="#"><img id="8" src="images/memes/8.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
+                <a class="grid-item img9" href="#"><img id="9" src="images/memes/9.jpg" onclick="getMeme(this.id)"
+                        alt=""></a>
             </div>
         </div>
-        <div class="about grid">
-            <img class="about-img" src="images/memes/6.jpg" alt="">
-            <h3>Monica Geller</h3>
-            <p>is a fictional character, one of the six main characters who appears on the American sitcom Friends
-                (1994–2004). Created by David Crane and Marta Kauffman</p>
-            <span>icon1</span><span>icon2</span><span>icon3</span>
+        <div class="about flex align-center space-around">
+            <img class="about-img" src="images/memes/14.jpg" alt="">
+            <div class="about-content">
+                <h3>Monica Geller</h3>
+                <p>is a fictional character, one of the six main characters who appears on the American sitcom Friends
+                    (1994–2004). Created by David Crane and Marta Kauffman</p>
+                <div class="about-icons">
+                    <i id="linkedin" class="fa fa-brands fa-linkedin"></i>
+                    <i id="fb" class="fa fa-brands fa-facebook-square"></i>
+                    <i id="git" class="fa fa-brands fa-github-square"></i>
+                </div>
+            </div>
         </div>
     </main>
-    <!-- <footer class="footer">
-        <div class="logo">LOGO</div>
+    <section class="canvas-editor">
+        <main class="main-editor flex">
+            <canvas id="my-canvas" height="500px" width="500px"></canvas>
+            <div class="editor-container">
+                <input type="text" name="text" id="text-input" class="text-input">
+                <div class="top-buttons flex space-around">
+                    <button class="switch-txt">
+                        <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                    </button>
+                    <button class="add-text">
+                        <img src="icons/add.png" alt="">
+                    </button>
+                    <button class="delete-text">
+                        <img src="icons/trash.png" alt="">
+                    </button>
+                </div>
+                <div class="mid-buttons flex space-around">
+                    <button class="font-big">
+                        <img src="icons/increase font - icon.png" alt="">
+                    </button>
+                    <button class="font-small">
+                        <img src="icons/decrease font - icon.png" alt="">
+                    </button>
+                    <button class="align-left">
+                        <img src="icons/align-to-left.png" alt="">
+                    </button>
+                    <button class="align-center">
+                        <img src="icons/center-text-alignment.png" alt="">
+                    </button>
+                    <button class="align-right">
+                        <img src="icons/align-to-right.png" alt="">
+                    </button>
+
+                </div>
+                <div class="flex space-around">
+                    <select name="select-font-family" id="select-font-family">
+                        <option value="impact" selected="selected">Impact</option>
+                        <option value="serif"> Serif </option>
+                        <option value="arial"> Arial </option>
+                        <option value="sans-serif"> Sans-Serif </option>
+                        <option value="tahoma"> Tahoma </option>
+                    </select>
+                    <button class="font-stroke"><img src="icons/text stroke.png" alt=""></button>
+                    <button class="font-color"><input type="color" name="color" id="color" value="#ffffff"
+                            oninput="setColor(this.value)"></button>
+
+
+                </div>
+            </div>
+        </main>
+    </section>
+    <footer class="footer flex column align-center">
+        <img src="images/logo/logo.png" alt="">
         <small>all rights reserved 2019</small>
-    </footer> -->
+    </footer>
     <script src="js/main.js"></script>
 </body>
 
