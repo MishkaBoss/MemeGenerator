@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body onload="init()">
     <header class="top-header">
         <div class="header-container flex space-between align-center main-layout">
             <div class="logo"><img src="images/logo/logo.png" alt=""></div>
             <ul class="nav-bar flex clean-list">
-                <li><a href="index.html">Gallery</a></li>
-                <li><a href="#">About</a></li>
+                <li onclick="switchToGallery()"><a href="index.html">Gallery</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </div>
     </header>
@@ -26,29 +26,29 @@
     <main class="main-content">
         <div class="grid-container">
             <div class="grid-gallery grid-style">
-                <a class="grid-item img1" href="#"><img id="1" src="images/memes/1.jpg" onclick="getMeme(this.src)"
+                <a class="grid-item img1" href="#"><img id="1" src="images/memes/1.jpg" alt=""
+                        onclick="renderMeme(this.id)"></a>
+                <a class=" grid-item img2" href="#"><img id="18" src="images/memes/18.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class=" grid-item img2" href="#"><img id="18" src="images/memes/18.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img3" href="#"><img id="17" src="images/memes/17.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img3" href="#"><img id="17" src="images/memes/17.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img4" href="#"><img id="15" src="images/memes/15.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img4" href="#"><img id="15" src="images/memes/15.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img5" href="#"><img id="5" src="images/memes/5.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img5" href="#"><img id="5" src="images/memes/5.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img6" href="#"><img id="6" src="images/memes/6.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img6" href="#"><img id="6" src="images/memes/6.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img7" href="#"><img id="13" src="images/memes/13.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img7" href="#"><img id="13" src="images/memes/13.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img8" href="#"><img id="8" src="images/memes/8.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
-                <a class="grid-item img8" href="#"><img id="8" src="images/memes/8.jpg" onclick="getMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img9" href="#"><img id="9" src="images/memes/9.jpg" onclick="getMeme(this.id)"
+                <a class="grid-item img9" href="#"><img id="9" src="images/memes/9.jpg" onclick="renderMeme(this.id)"
                         alt=""></a>
             </div>
         </div>
         <div class="about flex align-center space-around">
             <img class="about-img" src="images/memes/14.jpg" alt="">
-            <div class="about-content">
+            <div class="about-content" id="about">
                 <h3>Monica Geller</h3>
                 <p>is a fictional character, one of the six main characters who appears on the American sitcom Friends
                     (1994–2004). Created by David Crane and Marta Kauffman</p>
@@ -62,9 +62,10 @@
     </main>
     <section class="canvas-editor">
         <main class="main-editor flex">
-            <canvas id="my-canvas" height="500px" width="500px"></canvas>
+            <canvas id="my-canvas" height="500px" width="500px" onclick="draw(event)"></canvas>
             <div class="editor-container">
-                <input type="text" name="text" id="text-input" class="text-input">
+                <input type="text" name="text" id="text-input" class="text-input" value="Your Text Here"
+                    oonkeyup="getText(this.value)">
                 <div class="top-buttons flex space-around">
                     <button class="switch-txt">
                         <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
