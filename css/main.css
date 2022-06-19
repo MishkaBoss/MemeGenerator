@@ -241,6 +241,7 @@ small {
   border-radius: 10px;
   background-color: var(--clr3);
   border: none;
+  cursor: pointer;
 }
 .editor-container button img {
   height: 19px;
@@ -262,9 +263,19 @@ canvas {
   outline: none;
   border: none;
 }
-.top-buttons {
-  /* margin-inline-start: 260px; */
+.btn {
+  text-align: center;
+  margin: 0 auto;
+  width: 80px;
+  height: 60px;
+  background-color: #fff;
+  text-decoration: none;
+  color: var(--clr6);
+  border-radius: 10px;
+  font-family: montserrat, sans-serif;
+  padding-top: 0.8rem;
 }
+
 select {
   border: none;
   border-radius: 10px;
@@ -284,4 +295,48 @@ button.font-color img {
   /* margin-bottom: 60px; */
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 2rem;
+    margin-block-end: 3rem;
+  }
+  .main-editor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .editor-container {
+    width: 100%;
+    background-color: var(--clr5);
+  }
+  .editor-container > * {
+    /* border: 1px solid red; */
+    width: 100%;
+    /* margin: 1rem auto; */
+  }
+  footer {
+    margin-block-start: 110%;
+  }
+  .top-button > * {
+    margin-inline-start: 5rem;
+  }
+  #my-canvas {
+    width: 100%;
+    /* overflow: auto; */
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  #my-canvas {
+    width: 400px;
+    height: 400px;
+    margin-inline-start: 2rem;
+  }
+  .editor-container {
+    width: 100%;
+    margin-inline-end: 3rem;
+  }
 }

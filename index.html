@@ -27,23 +27,23 @@
         <div class="grid-container">
             <div class="grid-gallery grid-style">
                 <a class="grid-item img1" href="#"><img id="1" src="images/memes/1.jpg" alt=""
-                        onclick="renderMeme(this.id)"></a>
-                <a class=" grid-item img2" href="#"><img id="18" src="images/memes/18.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img3" href="#"><img id="17" src="images/memes/17.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img4" href="#"><img id="15" src="images/memes/15.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img5" href="#"><img id="5" src="images/memes/5.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img6" href="#"><img id="6" src="images/memes/6.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img7" href="#"><img id="13" src="images/memes/13.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img8" href="#"><img id="8" src="images/memes/8.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
-                <a class="grid-item img9" href="#"><img id="9" src="images/memes/9.jpg" onclick="renderMeme(this.id)"
-                        alt=""></a>
+                        onclick="switchToEditor(this.id)"></a>
+                <a class=" grid-item img2" href="#"><img id="18" src="images/memes/18.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img3" href="#"><img id="17" src="images/memes/17.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img4" href="#"><img id="15" src="images/memes/15.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img5" href="#"><img id="5" src="images/memes/5.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img6" href="#"><img id="6" src="images/memes/6.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img7" href="#"><img id="13" src="images/memes/13.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img8" href="#"><img id="8" src="images/memes/8.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
+                <a class="grid-item img9" href="#"><img id="9" src="images/memes/9.jpg"
+                        onclick="switchToEditor(this.id)" alt=""></a>
             </div>
         </div>
         <div class="about flex align-center space-around">
@@ -62,26 +62,26 @@
     </main>
     <section class="canvas-editor">
         <main class="main-editor flex">
-            <canvas id="my-canvas" height="500px" width="500px" onclick="draw(event)"></canvas>
+            <canvas id="my-canvas" height="500px" width="500px"></canvas>
             <div class="editor-container">
-                <input type="text" name="text" id="text-input" class="text-input" value="Your Text Here"
-                    oonkeyup="getText(this.value)">
+                <input type="text" name="text" id="text-input" class="text-input" placeholder="Your Text Here"
+                    oninput="getText(this.value)">
                 <div class="top-buttons flex space-around">
                     <button class="switch-txt">
                         <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
                     </button>
-                    <button class="add-text">
+                    <button class="add-text" onclick="addLine()">
                         <img src="icons/add.png" alt="">
                     </button>
-                    <button class="delete-text">
+                    <button class="delete-text" onclick="deleteLine()">
                         <img src="icons/trash.png" alt="">
                     </button>
                 </div>
                 <div class="mid-buttons flex space-around">
-                    <button class="font-big">
+                    <button class="font-big" onclick="fontBigger()">
                         <img src="icons/increase font - icon.png" alt="">
                     </button>
-                    <button class="font-small">
+                    <button class="font-small" onclick="fontSmaller()">
                         <img src="icons/decrease font - icon.png" alt="">
                     </button>
                     <button class="align-left">
@@ -90,12 +90,12 @@
                     <button class="align-center">
                         <img src="icons/center-text-alignment.png" alt="">
                     </button>
-                    <button class="align-right">
+                    <button class="align-right" onclick="alignRight()">
                         <img src="icons/align-to-right.png" alt="">
                     </button>
 
                 </div>
-                <div class="flex space-around">
+                <div class="low-buttons flex space-around">
                     <select name="select-font-family" id="select-font-family">
                         <option value="impact" selected="selected">Impact</option>
                         <option value="serif"> Serif </option>
@@ -106,13 +106,21 @@
                     <button class="font-stroke"><img src="icons/text stroke.png" alt=""></button>
                     <button class="font-color"><input type="color" name="color" id="color" value="#ffffff"
                             oninput="setColor(this.value)"></button>
+                </div>
+                <div class="lowest-buttons flex space-between">
+                    <button class="btn" onclick="uploadImg()">
+                        Upload Image from Canvas
+                    </button>
 
+                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
 
                 </div>
+                <p class="user-msg"></p>
+                <div class="share-container"></div>
             </div>
         </main>
     </section>
-    <footer class="footer flex column align-center">
+    <footer class=" footer flex column align-center">
         <img src="images/logo/logo.png" alt="">
         <small>all rights reserved 2019</small>
     </footer>
