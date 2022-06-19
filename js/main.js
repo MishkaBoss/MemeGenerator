@@ -172,7 +172,7 @@ function renderCanvas() {
 
 function drawImg() {
     var base_image = new Image();
-    base_image.src = `/images/memes/${gMeme.selectedImgId}.jpg`
+    base_image.src = `images/memes/${gMeme.selectedImgId}.jpg`
     gCtx.drawImage(base_image, 0, 0);
 }
 function deleteLine() {
